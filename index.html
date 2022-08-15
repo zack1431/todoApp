@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+  <title>Todo app</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadDefault()" id="bodyBg">
+  <section class="header row width100" id="headerImg">
+    <div class="title">
+      <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+        <h2 class="clr-1">To Do <span class="float-end"><img id="dayNightIcon"></span></h2>
+        <div class="addInput pt-3">
+          <input type="text" placeholder="Add New Task By Pressing Enter..." class="form-control no-dark" id="addtask  " onfocus="changeClass()" onkeypress="addTodo(event)"/>
+        </div>
+        <div class="todo-list pt-3 position-relative">
+          <ul class="list-group position-relative" id="taskList">
+          </ul>
+            <li class="list-group-item d-flex position-absolute p-2 filter-list">
+              <div class="flex-fill" id="totalTasks"></div>
+              <div class="flex-fill filters text-center">
+                <span class="plr-5 fw-b active" onclick="showAll()">All</span>
+                <span class="plr-5 fw-b text-muted" id="activeFill" onclick="onGoing()">Active</span>
+                <span class="plr-5 fw-b text-muted" id="completeFill" onclick="completeTask()">Completed</span>
+              </div>
+              <div class="flex-fill text-right fw-b cursor" onclick="clearTask()">Clear Completed</div>
+            </li>
+        </div>
+        <div class="d-flex p-10 mt-4 mob-filter">
+          <div class="flex-fill  text-center">
+            <span class="plr-5 fw-b active" onclick="showAll()">All</span>
+            <span class="plr-5 fw-b clr-3" id="activeFill" onclick="onGoing()">Active</span>
+            <span class="plr-5 fw-b clr-3" id="completeFill" onclick="completeTask()">Completed</span>
+          </div>
+        </div>
+        <div class="pt-5 text-center">
+          <span class="clr-4 fw-b7">Drag and drop to reorder list</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  
+</body>
+</html>
